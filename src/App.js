@@ -1,3 +1,23 @@
+import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
+import "./style.css";
+
+export default function App() {
+  return (
+    <div className="App">
+      <PrimaryButton>test</PrimaryButton>
+    </div>
+  )
+};
+
+
+
+
+
+
+
+
+
+
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -24,27 +44,27 @@
 
 // export default App;
 
-import { useState } from "react";
-import "./style.css";
+// import { useState } from "react";
+// import "./style.css";
 
-export default function App() {
-  console.log("App");
-  const [count, setCount] = useState(0);
+// export default function App() {
+//   console.log("App");
+//   const [count, setCount] = useState(0);
 
-  const onClickCountUp = () => {
-    setCount(count + 1);
-  }
+//   const onClickCountUp = () => {
+//     setCount(count + 1);
+//   }
 
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-      <p>{count}</p>
-      <button onClick={onClickCountUp}>
-        COUNT UP!!!
-      </button>
+//   return (
+//     <div className="App">
+//       <h1>Hello</h1>
+//       <p>{count}</p>
+//       <button onClick={onClickCountUp}>
+//         COUNT UP!!!
+//       </button>
 
-    </div>
-  )
+//     </div>
+//   )
 
-}
+// }
 
