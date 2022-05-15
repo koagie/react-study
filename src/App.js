@@ -1,7 +1,25 @@
-import { Router } from "./router/Router"
+import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
+import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
+import { SearchInput } from "./components/molecules/SearchInput";
 import "./style.css";
 
 export default function App() {
+  return (
+  <div className="App">
+  <PrimaryButton>test</PrimaryButton>
+  <SecondaryButton>検索</SecondaryButton>
+  <br />
+  <SearchInput />
+  </div>
+  )
+};
+
+
+
+// import { Router } from "./router/Router"
+// import "./style.css";
+
+// export default function App() {
   // return (
   //   //BrowserRouterの有効化
   //   <BrowserRouter>
@@ -23,13 +41,13 @@ export default function App() {
   //     </Routes>
   //   </BrowserRouter>
   // )
-  return (
-    <div>
-    <h1>React Router v6</h1>
-    <Router />
-  </div>
-  )
-};
+//   return (
+//     <div>
+//     <h1>React Router v6</h1>
+//     <Router />
+//   </div>
+//   )
+// };
 
 
 
