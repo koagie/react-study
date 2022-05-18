@@ -6,5 +6,5 @@ export const CssModules = () => {
       <p>css modules</p>
       <button>fight!</button>
     </div>
-    )
-}
+  )
+};
