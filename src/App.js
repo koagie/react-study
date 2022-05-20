@@ -6,12 +6,15 @@
 // import { DefaultLayout } from "./components/templates/DefaultLayout";
 // import { HeaderOnly } from "./components/templates/HeaderOnly";
 import { Router } from "./router/Router";
+import { ChakraProvider } from '@chakra-ui/react';
 import "./style.css";
 
 
 export default function App() {
   return (
-    <Router />
+    <ChakraProvider>
+      <Router />
+    </ChakraProvider>
   )
 };
 
