@@ -1,6 +1,8 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { SearchInput } from "../../components/molecules/SearchInput";
 import { UserCard } from "../Organisms/user/UserCard";
+import { useLocation } from "react-router-dom";
 
 const users = [...Array(10).keys()].map(((val) => {
   return {
@@ -17,6 +19,9 @@ const users = [...Array(10).keys()].map(((val) => {
 }))
 
 export const Users = () => {
+  const location = useLocation(); // URL path や パラメータなど。JSのlocationと同じ
+  console.log(location.state)
+  // const isAdmin = location.state ? state.isAdmin : false;
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
