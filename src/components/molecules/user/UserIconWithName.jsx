@@ -2,11 +2,12 @@ import styled from "@emotion/styled";
 
 export const UserIconWithName = (props) => {
   // imageとnameのみ使用
-  const { image, name } = props;
+  const { image, name, isAdmin } = props;
   return (
     <SContainer>
       <SImg height={160} width={160} src={image} alt={name} />
       <SName>{name}</SName>
+      {isAdmin && <SEdit>EDIT</SEdit>}
     </SContainer>
   )
 }
@@ -22,4 +23,9 @@ const SName = styled.p`
   font-weight: bold;
   margin: 0px;
   color: #40514e;
+`
+const SEdit = styled.span`
+  text-decoration: underline;
+  color: #aaa;
+  cursor: pointer;
 `
