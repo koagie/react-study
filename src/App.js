@@ -8,12 +8,16 @@
 import { Router } from "./router/Router";
 import { ChakraProvider } from '@chakra-ui/react';
 import "./style.css";
+//propsをどこでも使えるようにcontextのjsxを一番上の部分でかこうとどこでもprops（context）が使える
+import { UserProvider } from "./providers/UserProvider";
 
 
 export default function App() {
   return (
     <ChakraProvider>
-      <Router />
+      <UserProvider>
+        <Router />
+      </UserProvider>
     </ChakraProvider>
   )
 };

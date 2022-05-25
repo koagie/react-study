@@ -1,8 +1,14 @@
+import { useContext } from "react";
 import styled from "@emotion/styled";
+import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
   // imageとnameのみ使用
-  const { image, name, isAdmin } = props;
+  const { image, name } = props;
+  //どのcontextかを（）内で判別する
+  const context = useContext(UserContext);
+  const { userInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SContainer>
       <SImg height={160} width={160} src={image} alt={name} />

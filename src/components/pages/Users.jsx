@@ -22,15 +22,13 @@ export const Users = () => {
   const location = useLocation(); // URL path や パラメータなど。JSのlocationと同じ
   console.log(location.state)
   // location.state でわたせるようになる
-  const isAdmin = location.state ? location.state.isAdmin : false;
-  console.log(isAdmin);
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
       <SearchInput />
       <SUserArea>
         {users.map((user) => (
-          <UserCard key={user.id} user={user} isAdmin={isAdmin} />
+          <UserCard key={user.id} user={user} />
         ))}
       </SUserArea>
     </SContainer>

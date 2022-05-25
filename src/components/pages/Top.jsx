@@ -2,22 +2,21 @@ import styled from "@emotion/styled";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { Center, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserProvider";
 
 
 export const Top = () => {
   const navigation = useNavigate();
+  const {setUserInfo} = useContext(UserContext);
   //navigatite()は、第一引数に遷移するパス、第二変数にstateをオブジェクトで渡す
   const onClickAdmin = () => {
-    navigation(
-      "/users",
-      {state: {isAdmin: true}}
-    )
+    setUserInfo({ isAdmin: true });
+    navigation("/users")
   };
   const onClickGeneral = () => {
-    navigation(
-      "/users",
-      {state: { isAdmin: false}}
-    )
+    setUserInfo({ isAdmin: false });
+    navigation("/users")
   };
   return (
     <>
