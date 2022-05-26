@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
+import { memo } from "react";
 import { Card } from "../../atoms/card/card";
 import { UserIconWithName } from "../../molecules/user/UserIconWithName";
 
-export const UserCard = (props) => {
+export const UserCard = memo((props) => {
+  console.log('UserCard');
   // userを受け取る
   const { user } = props;
   return (
@@ -20,7 +22,7 @@ export const UserCard = (props) => {
       </SDl>
     </Card>
   )
-}
+});
 
 const SDl = styled.dl`
   text-align: left;

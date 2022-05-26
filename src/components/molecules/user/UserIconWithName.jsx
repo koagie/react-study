@@ -1,13 +1,17 @@
-import { useContext } from "react";
+import { memo } from "react";
 import styled from "@emotion/styled";
-import { UserContext } from "../../../providers/UserProvider";
+// import { UserContext } from "../../../providers/UserProvider";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../../store/userState";
 
-export const UserIconWithName = (props) => {
+export const UserIconWithName = memo((props) => {
+  console.log(UserIconWithName);
   // imageとnameのみ使用
   const { image, name } = props;
   //どのcontextかを（）内で判別する
-  const context = useContext(UserContext);
-  const { userInfo } = useContext(UserContext);
+  // const context = useContext(UserContext);
+  // const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SContainer>
@@ -16,7 +20,7 @@ export const UserIconWithName = (props) => {
       {isAdmin && <SEdit>EDIT</SEdit>}
     </SContainer>
   )
-}
+});
 
 const SContainer = styled.div`
   text-align: center;

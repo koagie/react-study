@@ -10,15 +10,18 @@ import { ChakraProvider } from '@chakra-ui/react';
 import "./style.css";
 //propsをどこでも使えるようにcontextのjsxを一番上の部分でかこうとどこでもprops（context）が使える
 import { UserProvider } from "./providers/UserProvider";
+import { RecoilRoot } from "recoil";
 
 
 export default function App() {
   return (
-    <ChakraProvider>
-      <UserProvider>
-        <Router />
-      </UserProvider>
-    </ChakraProvider>
+    <RecoilRoot>
+      <ChakraProvider>
+        <UserProvider>
+          <Router />
+        </UserProvider>
+      </ChakraProvider>
+    </RecoilRoot>
   )
 };
 

@@ -3,6 +3,10 @@ import styled from "@emotion/styled";
 import { SearchInput } from "../../components/molecules/SearchInput";
 import { UserCard } from "../Organisms/user/UserCard";
 import { useLocation } from "react-router-dom";
+import { SecondaryButton } from "../../components/atoms/button/SecondaryButton";
+// import { UserContext } from "../../providers/UserProvider";
+import { useRecoilState } from "recoil";
+import { userState } from "../../store/userState";
 
 const users = [...Array(10).keys()].map(((val) => {
   return {
@@ -20,12 +24,20 @@ const users = [...Array(10).keys()].map(((val) => {
 
 export const Users = () => {
   const location = useLocation(); // URL path や パラメータなど。JSのlocationと同じ
+
+  // const { userInfo, setUserInfo } = useContext(UserContext);
+  //今のuseInfoの値の反対の値（!isAdmin）でisAdminを更新
+  const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin});
+
+  const [ userInfo, setUserInfo ] = useRecoilState(userState);
+
   console.log(location.state)
   // location.state でわたせるようになる
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
       <SearchInput />
+      <SecondaryButton onClick={onClickSwitch}>切り替え</SecondaryButton>
       <SUserArea>
         {users.map((user) => (
           <UserCard key={user.id} user={user} />
