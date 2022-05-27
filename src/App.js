@@ -1,3 +1,56 @@
+
+//-----------  たったこれだけで、データ取得が可能    ------------------
+// import axios from "axios";
+// import "./style.css";
+
+// export default function App() {
+//   const onClickUsers = () => {
+//     axios.get("https://jsonplaceholder.typicode.com/ussdfgasfrs").then((res) => {
+//       console.log(res.data);
+//       //error時の設定もcatchで可能
+//     }).catch((err) => console.log(err));
+//   };
+//   const onClickUsers1 = () => {
+//     axios.get("https://jsonplaceholder.typicode.com/users/3").then((res) => {
+//       console.log(res.data);
+//       //error時の設定もcatchで可能
+//     }).catch((err) => console.log(err));
+//   };
+//   // const onClickUsers1 = () => {
+//   //   alert('user1');
+//   // };
+//   return (
+//     <div className="App">
+//       <button onClick={onClickUsers}>users</button>
+//       <button onClick={onClickUsers1}>id=1's users</button>
+// </div>
+//   );
+// }
+//-----------  たったこれだけで、データ取得が可能    ------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//45まで↓
+
 // import { BrowserRouter } from "react-router-dom";
 // import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
 // import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
@@ -5,25 +58,25 @@
 // import { UserCard } from "./components/Organisms/user/UserCard";
 // import { DefaultLayout } from "./components/templates/DefaultLayout";
 // import { HeaderOnly } from "./components/templates/HeaderOnly";
-import { Router } from "./router/Router";
-import { ChakraProvider } from '@chakra-ui/react';
-import "./style.css";
-//propsをどこでも使えるようにcontextのjsxを一番上の部分でかこうとどこでもprops（context）が使える
-import { UserProvider } from "./providers/UserProvider";
-import { RecoilRoot } from "recoil";
+// import { Router } from "./router/Router";
+// import { ChakraProvider } from '@chakra-ui/react';
+// import "./style.css";
+// //propsをどこでも使えるようにcontextのjsxを一番上の部分でかこうとどこでもprops（context）が使える
+// import { UserProvider } from "./providers/UserProvider";
+// import { RecoilRoot } from "recoil";
 
 
-export default function App() {
-  return (
-    <RecoilRoot>
-      <ChakraProvider>
-        <UserProvider>
-          <Router />
-        </UserProvider>
-      </ChakraProvider>
-    </RecoilRoot>
-  )
-};
+// export default function App() {
+//   return (
+//     <RecoilRoot>
+//       <ChakraProvider>
+//         <UserProvider>
+//           <Router />
+//         </UserProvider>
+//       </ChakraProvider>
+//     </RecoilRoot>
+//   )
+// };
 
 
       // <DefaultLayout>
