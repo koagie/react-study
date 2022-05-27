@@ -11,6 +11,7 @@ export const UserIconWithName = memo((props) => {
   //どのcontextかを（）内で判別する
   // const context = useContext(UserContext);
   // const { userInfo } = useContext(UserContext);
+  //値だけ参照している
   const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
